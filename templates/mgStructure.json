@@ -1,0 +1,54 @@
+{
+    "REPLACEME": [ // Replace with tenant Id
+        {
+            "id": "", // Replace with the proposed Id for the top level management group
+            "displayName": "", // Replace with the displayname for the top level management group
+            "children": [
+                {
+                    "id": "platform",
+                    "displayName": "Platform",
+                    "children": [
+                        {
+                            "id": "management",
+                            "displayName": "Management",
+                            "subscriptions": []
+                        },
+                        {
+                            "id": "connectivity",
+                            "displayName": "Connectivity",
+                            "subscriptions": []
+                        },
+                        {
+                            "id": "identity",
+                            "displayName": "Identity",
+                            "subscriptions": []
+                        }
+                    ]
+                },
+                {
+                    "id": "lzones",
+                    "displayName": "Landing Zones",
+                    "children": [
+                        {
+                            "id": "corp",
+                            "displayName": "corp"
+                        },
+                        {
+                            "id": "online",
+                            "displayName": "online",
+                            "subscriptions": []
+                        }
+                    ]
+                },
+                {
+                    "id": "sandbox",
+                    "displayName": "Sandbox"
+                },
+                {
+                    "id": "decomissioned",
+                    "displayName": "Decomissioned"
+                }
+            ]
+        }
+    ]
+}

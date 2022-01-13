@@ -1,0 +1,6 @@
+{
+    "managementResourceGroupName": "",
+    "logAnalyticsWorkspaceName": "",
+    "automationAccountName": "",
+    "deploySentinel": "Yes"
+}

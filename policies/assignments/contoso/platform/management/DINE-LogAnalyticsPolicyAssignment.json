@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "topLevelManagementGroupPrefix": {
+            "value": "contoso"
+        },
+        "enforcementMode": {
+            "value": "Default"
+        },
+        "retentionInDays": {
+            "value": "30"
+        },
+        "logAnalyticsWorkspaceName": {
+            "value": "contoso-la"
+        },
+        "automationAccountName": {
+            "value": "contoso-auto"
+        },
+        "workspaceRegion": {
+            "value": "australiaeast"
+        },
+        "automationRegion": {
+            "value": "australiaeast"
+        },
+        "rgName": {
+            "value": "contoso-mg"
+        }
+    }
+}

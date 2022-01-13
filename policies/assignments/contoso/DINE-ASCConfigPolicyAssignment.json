@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "topLevelManagementGroupPrefix": {
+            "value": "contoso"
+        },
+        "enforcementMode": {
+            "value": "Default"
+        },
+        "logAnalyticsResourceId": {
+            "value": "" // Requires value
+        },
+        "emailContactAsc": {
+            "value": "anwather@microsoft.com"
+        },
+        "enableAscForServers": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForSql": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForAppServices": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForStorage": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForRegistries": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForKeyVault": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForSqlOnVm": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForKubernetes": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForArm": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForDns": {
+            "value": "DeployIfNotExists"
+        },
+        "enableAscForOssDb": {
+            "value": "DeployIfNotExists"
+        }
+    }
+}
