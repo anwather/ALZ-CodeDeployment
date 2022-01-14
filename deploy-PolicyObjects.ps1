@@ -2,22 +2,34 @@
 
 $globals = Get-Content -Path .\globals.json | ConvertFrom-Json
 
+$policyArray = @()
+
 foreach ($definition in Get-ChildItem .\policies\definitions) {
-    $ct = Get-Content $definition | ConvertFrom-Json
-    New-AzManagementGroupDeployment -Name $definition.BaseName `
-        -ManagementGroupId $globals.topLevelManagementGroupId `
-        -TemplateFile .\bicep\definition.bicep `
-        -policyName $definition.BaseName `
-        -policyDefinition ($ct | ConvertPSObjectToHashtable) `
-        -Location $globals.defaultLocation -Verbose -AsJob
+    $p = @{
+        Name       = $definition.BaseName
+        Definition = Get-Content $definition | ConvertFrom-Json | ConvertPSObjectToHashtable
+    }
+    $policyArray += $p
 }
 
+New-AzManagementGroupDeployment -Name 'deploy-policies' `
+    -ManagementGroupId $globals.topLevelManagementGroupId `
+    -TemplateFile .\bicep\definition.bicep `
+    -policyDefinitions $policyArray `
+    -Location $globals.defaultLocation -Verbose
+
+$policyArray = @()
+
 foreach ($definition in Get-ChildItem .\policies\initiatives) {
-    $ct = Get-Content $definition | ConvertFrom-Json
-    New-AzManagementGroupDeployment -Name $definition.BaseName `
-        -ManagementGroupId $globals.topLevelManagementGroupId `
-        -TemplateFile .\bicep\setDefinition.bicep `
-        -policyName $definition.BaseName `
-        -policyDefinition ($ct | ConvertPSObjectToHashtable) `
-        -Location $globals.defaultLocation -Verbose -AsJob
+    $p = @{
+        Name       = $definition.BaseName
+        Definition = Get-Content $definition | ConvertFrom-Json | ConvertPSObjectToHashtable
+    }
+    $policyArray += $p
 }
+
+New-AzManagementGroupDeployment -Name 'deploy-initiatives' `
+    -ManagementGroupId $globals.topLevelManagementGroupId `
+    -TemplateFile .\bicep\setDefinition.bicep `
+    -policyDefinitions $policyArray `
+    -Location $globals.defaultLocation -Verbose
