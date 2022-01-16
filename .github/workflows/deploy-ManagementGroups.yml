@@ -17,6 +17,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: "Install Az Modules"
+        shell: pwsh
+        run: |
+          Install-Module Az.Accounts,Az.Resources -Force
+      - name: "Install Bicep"
+        shell: bash
+        run: |
+          curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+          chmod +x ./bicep
+          sudo mv ./bicep /usr/local/bin/bicep
       - name: "Connect"
         shell: pwsh
         run: |
