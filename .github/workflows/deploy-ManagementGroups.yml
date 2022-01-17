@@ -19,12 +19,6 @@ jobs:
         shell: pwsh
         run: |
           Install-Module Az.Accounts,Az.Resources -Force
-      # - name: "Install Bicep"
-      #   shell: bash
-      #   run: |
-      #     curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
-      #     chmod +x ./bicep
-      #  continue-on-error: true
       - name: "Connect"
         shell: pwsh
         run: |
