@@ -1,0 +1,33 @@
+{
+  "description": "This policy denies creation of Public IPs under the assigned scope.",
+  "displayName": "Deny the creation of public IP",
+  "mode": "Indexed",
+  "parameters": {
+    "effect": {
+      "type": "String",
+      "allowedValues": [
+        "Audit",
+        "Deny",
+        "Disabled"
+      ],
+      "defaultValue": "Deny",
+      "metadata": {
+        "displayName": "Effect",
+        "description": "Enable or disable the execution of the policy"
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "category": "Network"
+  },
+  "policyRule": {
+    "if": {
+      "field": "type",
+      "equals": "Microsoft.Network/publicIPAddresses"
+    },
+    "then": {
+      "effect": "[parameters('effect')]"
+    }
+  }
+}
