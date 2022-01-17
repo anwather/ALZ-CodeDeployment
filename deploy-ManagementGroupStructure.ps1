@@ -4,6 +4,8 @@ $globals = Get-Content -Path ./globals.json | ConvertFrom-Json
 
 $v = Get-Content ./templates/mgStructure.json | ConvertFrom-Json
 
+Write-Output $v
+
 foreach ($tlManagementGroup in $v.($globals.tenantId)) {
     New-AzDeployment -Location australiaeast -TemplateFile ./bicep/mg.bicep -Id $tlManagementGroup.id -DisplayName $tlManagementGroup.displayName -parent $globals.tenantId -Verbose
     if ($null -ne $tlManagementGroup.children) {
