@@ -27,4 +27,4 @@ jobs:
       - name: "Deploy"
         shell: pwsh
         run: |
-          ./deploy-ManagementGroupStructure.ps1
+          ./deploy-PolicyObjects.ps1
