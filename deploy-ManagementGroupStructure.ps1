@@ -1,3 +1,5 @@
+Write-Output "Hello"
+
 . .\utilities\functions.ps1
 
 $globals = Get-Content -Path .\globals.json | ConvertFrom-Json

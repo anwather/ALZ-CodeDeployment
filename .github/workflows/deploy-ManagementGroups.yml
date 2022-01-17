@@ -25,6 +25,5 @@ jobs:
           $credential = New-Object PSCredential -ArgumentList $env:ARM_CLIENT_ID, (ConvertTo-SecureString -String $env:ARM_CLIENT_SECRET -AsPlainText -Force)
           Connect-AzAccount -TenantId $env:ARM_TENANT_ID -ServicePrincipal -Credential $credential -SubscriptionId $env:ARM_SUBSCRIPTION_ID
       - name: "Deploy"
-        shell: pwsh
-        run: |
-          ./deploy-ManagementGroupStructure.ps1
+        shell: bash
+        run: pwsh -File ./deploy-ManagementGroupStructure.ps1
