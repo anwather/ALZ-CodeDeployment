@@ -10,7 +10,7 @@ env:
 jobs:
   deploy:
     name: "Deploy Management Group Structure"
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: "Checkout"
@@ -33,4 +33,4 @@ jobs:
       - name: "Deploy"
         shell: pwsh
         run: |
-          .\deploy-ManagementGroupStructure.ps1
+          ./deploy-ManagementGroupStructure.ps1
