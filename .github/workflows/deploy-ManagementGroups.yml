@@ -33,5 +33,5 @@ jobs:
       - name: "Deploy"
         shell: pwsh
         run: |
-          gci
+          gci -recurse
           ./deploy-ManagementGroupStructure.ps1
