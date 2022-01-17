@@ -365,7 +365,7 @@
   },
   "PolicyDefinitions": [
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Append-AppService-httpsonly",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Append-AppService-httpsonly",
       "policyDefinitionReferenceId": "AppServiceHttpEffect",
       "parameters": {
         "effect": {
@@ -374,7 +374,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Append-AppService-latestTLS",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Append-AppService-latestTLS",
       "policyDefinitionReferenceId": "AppServiceminTlsVersion",
       "parameters": {
         "effect": {
@@ -413,7 +413,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceApiApp-http",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceApiApp-http",
       "policyDefinitionReferenceId": "APIAppServiceHttpsEffect",
       "parameters": {
         "effect": {
@@ -422,7 +422,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceFunctionApp-http",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceFunctionApp-http",
       "policyDefinitionReferenceId": "FunctionServiceHttpsEffect",
       "parameters": {
         "effect": {
@@ -431,7 +431,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceWebApp-http",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-AppServiceWebApp-http",
       "policyDefinitionReferenceId": "WebAppServiceHttpsEffect",
       "parameters": {
         "effect": {
@@ -449,7 +449,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-MySQL-sslEnforcement",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-MySQL-sslEnforcement",
       "policyDefinitionReferenceId": "MySQLEnableSSLDeployEffect",
       "parameters": {
         "effect": {
@@ -461,7 +461,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-MySql-http",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-MySql-http",
       "policyDefinitionReferenceId": "MySQLEnableSSLEffect",
       "parameters": {
         "effect": {
@@ -473,7 +473,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-PostgreSQL-sslEnforcement",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-PostgreSQL-sslEnforcement",
       "policyDefinitionReferenceId": "PostgreSQLEnableSSLDeployEffect",
       "parameters": {
         "effect": {
@@ -485,7 +485,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-PostgreSql-http",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-PostgreSql-http",
       "policyDefinitionReferenceId": "PostgreSQLEnableSSLEffect",
       "parameters": {
         "effect": {
@@ -497,7 +497,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Append-Redis-sslEnforcement",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-sslEnforcement",
       "policyDefinitionReferenceId": "RedisTLSDeployEffect",
       "parameters": {
         "effect": {
@@ -509,7 +509,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Append-Redis-disableNonSslPort",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-disableNonSslPort",
       "policyDefinitionReferenceId": "RedisdisableNonSslPort",
       "parameters": {
         "effect": {
@@ -518,7 +518,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-Redis-http",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-Redis-http",
       "policyDefinitionReferenceId": "RedisDenyhttps",
       "parameters": {
         "effect": {
@@ -530,7 +530,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-SqlMi-minTLS",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-SqlMi-minTLS",
       "policyDefinitionReferenceId": "SQLManagedInstanceTLSDeployEffect",
       "parameters": {
         "effect": {
@@ -542,7 +542,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-SqlMi-minTLS",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-SqlMi-minTLS",
       "policyDefinitionReferenceId": "SQLManagedInstanceTLSEffect",
       "parameters": {
         "effect": {
@@ -554,7 +554,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-SQL-minTLS",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-SQL-minTLS",
       "policyDefinitionReferenceId": "SQLServerTLSDeployEffect",
       "parameters": {
         "effect": {
@@ -566,7 +566,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-Sql-minTLS",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-Sql-minTLS",
       "policyDefinitionReferenceId": "SQLServerTLSEffect",
       "parameters": {
         "effect": {
@@ -578,7 +578,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deny-Storage-minTLS",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deny-Storage-minTLS",
       "policyDefinitionReferenceId": "StorageHttpsEnabledEffect",
       "parameters": {
         "effect": {
@@ -590,7 +590,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-Storage-sslEnforcement",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-Storage-sslEnforcement",
       "policyDefinitionReferenceId": "StorageDeployHttpsEnabledEffect",
       "parameters": {
         "effect": {

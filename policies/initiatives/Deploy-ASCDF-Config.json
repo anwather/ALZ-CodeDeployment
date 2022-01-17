@@ -214,7 +214,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-ASC-SecurityContacts",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-ASC-SecurityContacts",
       "policyDefinitionReferenceId": "securityEmailContact",
       "parameters": {
         "emailSecurityContact": {

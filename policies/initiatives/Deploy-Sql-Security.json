@@ -72,7 +72,7 @@
   },
   "PolicyDefinitions": [
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-Tde",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-Tde",
       "policyDefinitionReferenceId": "SqlDbTdeDeploySqlSecurity",
       "parameters": {
         "effect": {
@@ -81,7 +81,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-SecurityAlertPolicies",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-SecurityAlertPolicies",
       "policyDefinitionReferenceId": "SqlDbSecurityAlertPoliciesDeploySqlSecurity",
       "parameters": {
         "effect": {
@@ -90,7 +90,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-AuditingSettings",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-AuditingSettings",
       "policyDefinitionReferenceId": "SqlDbAuditingSettingsDeploySqlSecurity",
       "parameters": {
         "effect": {
@@ -99,7 +99,7 @@
       }
     },
     {
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups//providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-vulnerabilityAssessments",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-vulnerabilityAssessments",
       "policyDefinitionReferenceId": "SqlDbVulnerabilityAssessmentsDeploySqlSecurity",
       "parameters": {
         "effect": {
