@@ -35,4 +35,4 @@ jobs:
       - name: "Deploy"
         shell: pwsh
         run: |
-          ./deploy-ManagementGroupStructure
+          './deploy-ManagementGroupStructure.ps1'
