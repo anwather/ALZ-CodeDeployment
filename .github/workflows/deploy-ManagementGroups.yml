@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: "Install Az Modules"
         shell: pwsh
         run: |
@@ -36,4 +34,4 @@ jobs:
         shell: pwsh
         run: |
           gci
-          './deploy-ManagementGroupStructure.ps1'
+          ./deploy-ManagementGroupStructure.ps1
