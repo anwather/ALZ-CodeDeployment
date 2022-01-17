@@ -1,6 +1,6 @@
 {
     "tenantId": "a5a4a08b-3ef0-4e1a-8803-a2ec3e8db73f",
-    "defaultLocation": "",
+    "defaultLocation": "australiaeast",
     "managementSubscriptionId": "",
     "connectivitySubscriptionId": "",
     "identitySubscriptionId": "",
