@@ -1,10 +1,10 @@
-. .\utilities\functions.ps1
+. ./utilities/functions.ps1
 
-$globals = Get-Content -Path .\globals.json | ConvertFrom-Json
+$globals = Get-Content -Path ./globals.json | ConvertFrom-Json
 
 Select-AzSubscription -SubscriptionName $globals.managementSubscriptionId
 
-$v = Get-Content .\templates\management.json | ConvertFrom-Json
+$v = Get-Content ./templates/management.json | ConvertFrom-Json
 
 New-AzSubscriptionDeployment -Name "management-la" `
     -Location $globals.defaultLocation `
