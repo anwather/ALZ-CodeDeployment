@@ -4,7 +4,7 @@ $globals = Get-Content -Path .\globals.json | ConvertFrom-Json
 
 Select-AzSubscription -SubscriptionName $globals.connectivitySubscriptionId
 
-$v = Get-Content -Path .\templates\connectivity.json | ConvertFrom-Json
+$v = (Get-Content -Path ./globals.json | ConvertFrom-Json).connectivitySettings
 
 $connectivityTemplateUri = "https://raw.githubusercontent.com/Azure/Enterprise-Scale/main/eslzArm/subscriptionTemplates/vwan-connectivity.json"
 

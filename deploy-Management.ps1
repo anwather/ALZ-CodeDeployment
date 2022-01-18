@@ -9,13 +9,13 @@ if ($null -eq $globals.managementSubscriptionId) {
 
 Select-AzSubscription -SubscriptionName $globals.managementSubscriptionId
 
-$v = Get-Content ./templates/management.json | ConvertFrom-Json
+$v = (Get-Content -Path ./globals.json | ConvertFrom-Json).managementSettings
 
 $requiredValues = @("managementResourceGroupName", "logAnalyticsWorkspaceName", "automationAccountName", "deploySentinel")
 
 $requiredValues | ForEach-Object {
     if ($null -eq $v[$_]) {
-        Write-Error "$_ contains no value in management.json"
+        Write-Error "$_ contains no value in globals.json"
         exit
     }
 }
