@@ -1,1 +1,0 @@
-- fix the policy definition and initiative deployment because Bicep is slow
