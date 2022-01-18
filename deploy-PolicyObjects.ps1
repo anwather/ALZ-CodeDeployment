@@ -2,6 +2,15 @@
 
 $globals = Get-Content -Path ./globals.json | ConvertFrom-Json
 
+$requiredValues = @("defaultLocation", "tenantId", "topLevelManagementGroupId")
+
+$requiredValues | ForEach-Object {
+    if ($null -eq $v[$_]) {
+        Write-Error "$_ contains no value in globals.json"
+        exit
+    }
+}
+
 $policyArray = @()
 
 foreach ($definition in Get-ChildItem ./policies/definitions) {
