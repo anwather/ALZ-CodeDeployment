@@ -1,8 +1,8 @@
 {
-    "a5a4a08b-3ef0-4e1a-8803-a2ec3e8db73f": [ // Replace with tenant Id
+    "": [ // Replace with tenant Id
         {
-            "id": "contoso", // Replace with the proposed Id for the top level management group
-            "displayName": "contoso", // Replace with the displayname for the top level management group
+            "id": "", // Replace with the proposed Id for the top level management group
+            "displayName": "", // Replace with the displayname for the top level management group
             "children": [
                 {
                     "id": "platform",
@@ -11,9 +11,7 @@
                         {
                             "id": "management",
                             "displayName": "Management",
-                            "subscriptions": [
-                                "838e9e33-645e-44fe-a094-209ed395a055"
-                            ]
+                            "subscriptions": []
                         },
                         {
                             "id": "connectivity",
