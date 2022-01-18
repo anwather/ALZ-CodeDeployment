@@ -11,7 +11,9 @@
                         {
                             "id": "management",
                             "displayName": "Management",
-                            "subscriptions": []
+                            "subscriptions": [
+                                "838e9e33-645e-44fe-a094-209ed395a055"
+                            ]
                         },
                         {
                             "id": "connectivity",
