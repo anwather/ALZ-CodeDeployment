@@ -2,6 +2,11 @@
 
 $globals = Get-Content -Path ./globals.json | ConvertFrom-Json
 
+if ($globals.managementSubscriptionId -eq $null) {
+    Write-Error "Add Management subscription Id to global variables before running"
+    exit
+}
+
 Select-AzSubscription -SubscriptionName $globals.managementSubscriptionId
 
 $v = Get-Content ./templates/management.json | ConvertFrom-Json

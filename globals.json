@@ -1,7 +1,7 @@
 {
     "tenantId": "a5a4a08b-3ef0-4e1a-8803-a2ec3e8db73f",
     "defaultLocation": "australiaeast",
-    "managementSubscriptionId": "",
+    "managementSubscriptionId": "838e9e33-645e-44fe-a094-209ed395a055",
     "connectivitySubscriptionId": "",
     "identitySubscriptionId": "",
     "topLevelManagementGroupId": "contoso"
