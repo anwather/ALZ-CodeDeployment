@@ -29,11 +29,11 @@ The following objects can be deployed:
 e.g.
 ```
 {
-                            "id": "management",
-                            "displayName": "Management",
-                            "subscriptions": [
-                                "5fbff64b-5bbc-4190-84d0-37225536885d"
-                            ]
+    "id": "management",
+    "displayName": "Management",
+    "subscriptions": [
+        "5fbff64b-5bbc-4190-84d0-37225536885d"
+    ]
 }
 ```
 6. Run the *utilities\policies.ps1* file to download the existing policy definitions, set definitions and assignment from the [Enterprise-Scale](https://github.com/Azure/Enterprise-Scale) repository. This utility can be run periodically to check for policy changes published upstream.
