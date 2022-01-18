@@ -2,9 +2,23 @@
 
 $globals = Get-Content -Path ./globals.json | ConvertFrom-Json
 
+if ($null -eq $globals.managementSubscriptionId) {
+    Write-Error "Add Management subscription Id to global variables before running"
+    exit
+}
+
 Select-AzSubscription -SubscriptionName $globals.managementSubscriptionId
 
 $v = Get-Content ./templates/management.json | ConvertFrom-Json
+
+$requiredValues = @("managementResourceGroupName", "logAnalyticsWorkspaceName", "automationAccountName", "deploySentinel")
+
+$requiredValues | ForEach-Object {
+    if ($null -eq $v[$_]) {
+        Write-Error "$_ contains no value in management.json"
+        exit
+    }
+}
 
 New-AzSubscriptionDeployment -Name "management-la" `
     -Location $globals.defaultLocation `

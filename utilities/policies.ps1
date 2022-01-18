@@ -1,3 +1,5 @@
+$globals = Get-Content -Path ./globals.json | ConvertFrom-Json
+
 $v = Get-Content .\templates\mgStructure.json | ConvertFrom-Json
 
 New-Item .\policies\definitions -ItemType Directory -Force
