@@ -30,7 +30,7 @@ foreach ($folder in Get-ChildItem -Path .\policies\assignments -Directory -Recur
                 -TemplateFile ($assignmentDefinitions | Where-Object Name -match $file.Name).FullName `
                 -TemplateParameterFile $file.FullName `
                 -Location $globals.defaultLocation `
-                -Verbose -AsJob
+                -Verbose
         }
         else {
             Write-Error "Could not deploy $($file.BaseName)"
