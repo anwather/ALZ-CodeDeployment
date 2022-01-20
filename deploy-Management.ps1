@@ -14,7 +14,7 @@ $v = (Get-Content -Path ./globals.json | ConvertFrom-Json).managementSettings
 $requiredValues = @("managementResourceGroupName", "logAnalyticsWorkspaceName", "automationAccountName", "deploySentinel")
 
 $requiredValues | ForEach-Object {
-    if ($null -eq $v[$_]) {
+    if ($v[$_] -eq "") {
         Write-Error "$_ contains no value in globals.json"
         exit
     }
