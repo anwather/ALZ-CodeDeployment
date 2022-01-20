@@ -4,6 +4,7 @@ $v = Get-Content .\templates\mgStructure.json | ConvertFrom-Json
 
 New-Item .\policies\definitions -ItemType Directory -Force
 New-Item .\policies\initiatives -ItemType Directory -Force
+New-Item .\policies\assignmentDefinitions -ItemType Directory -Force
 
 $defaultPolicyURIs = @(
     'https://raw.githubusercontent.com/Azure/Enterprise-Scale/main/eslzArm/managementGroupTemplates/policyDefinitions/policies.json'
