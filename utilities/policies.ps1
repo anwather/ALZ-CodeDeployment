@@ -4,6 +4,7 @@ $v = Get-Content .\templates\mgStructure.json | ConvertFrom-Json
 
 New-Item .\policies\definitions -ItemType Directory -Force
 New-Item .\policies\initiatives -ItemType Directory -Force
+New-Item .\policies\assignmentDefinitions -ItemType Directory -Force
 
 $defaultPolicyURIs = @(
     'https://raw.githubusercontent.com/Azure/Enterprise-Scale/main/eslzArm/managementGroupTemplates/policyDefinitions/policies.json'
@@ -47,3 +48,13 @@ foreach ($file in Get-ChildItem .\tmp\eslzArm\managementGroupTemplates\policyAss
 Start-Sleep -Seconds 15
 
 Remove-Item tmp -Recurse -Force
+
+## Policy Assignment Definition Fixes ##
+
+<# 1. DINE-VMBackupPolicyAssignment.json
+When deploy multiple times the RBAC assignment gets the same name - which causes it to error out when deploying at different scopes.
+#>
+
+(Get-Content .\policies\assignmentDefinitions\DINE-VMBackupPolicyAssignment.json) `
+    -replace "\[guid\(concat\(parameters\('toplevelManagementGroupPrefix'\), 'identity', variables\('policyAssignmentNames'\).deployVmBackup\)\)\]", "[guid(concat(parameters('toplevelManagementGroupPrefix'),deployment().name, 'identity', variables('policyAssignmentNames').deployVmBackup))]" `
+| Set-Content .\policies\assignmentDefinitions\DINE-VMBackupPolicyAssignment.json

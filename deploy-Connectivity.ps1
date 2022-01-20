@@ -6,6 +6,15 @@ Select-AzSubscription -SubscriptionName $globals.connectivitySubscriptionId
 
 $v = (Get-Content -Path ./globals.json | ConvertFrom-Json).connectivitySettings
 
+$requiredValues = @("addressPrefix", "location", "dnsResourceGroup")
+
+$requiredValues | ForEach-Object {
+    if ($null -eq $v[$_]) {
+        Write-Error "$_ contains no value in globals.json"
+        exit
+    }
+}
+
 $connectivityTemplateUri = "https://raw.githubusercontent.com/Azure/Enterprise-Scale/main/eslzArm/subscriptionTemplates/vwan-connectivity.json"
 
 New-AzSubscriptionDeployment -TemplateUri $connectivityTemplateUri `

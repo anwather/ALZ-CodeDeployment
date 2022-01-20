@@ -9,7 +9,7 @@ env:
 
 jobs:
   deploy:
-    name: "Deploy Management Group Structure"
+    name: "Deploy Policy Objects"
     runs-on: ubuntu-latest
 
     steps:

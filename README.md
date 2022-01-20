@@ -56,11 +56,18 @@ Add the service principal values to secrets in the GitHub repository as below. T
 
 GitHub Actions are provided to deploy each phase of the Azure Landing Zone.
 
-Run the *deploy-ManagementGroups* actions to deploy the mamagement group structure.
+Run the *deploy-ManagementGroups* action to deploy the mamagement group structure.
 
 ## Deploy Policy Objects
 
+Run the *deploy-PolicyObjects* action to deploy the policy definitions and set definitions.
+
 ## Deploy Management Subscription
+
+Before deploying the management subscription ensure the following tasks have been completed.
+1. The management subscription Id has been placed in the *templates\mgStructure.json* file and has been deployed
+2. The management subscription Id has been added to the value ```managementSubscriptionId``` in *globals.json*
+3. All values are present in *globals.json* under the ```managementSettings``` value.
 
 ## Deploy Policy Assignments
 

@@ -5,7 +5,7 @@ $globals = Get-Content -Path ./globals.json | ConvertFrom-Json
 $requiredValues = @("defaultLocation", "tenantId", "topLevelManagementGroupId")
 
 $requiredValues | ForEach-Object {
-    if ($null -eq $v[$_]) {
+    if ($globals[$_] -eq "") {
         Write-Error "$_ contains no value in globals.json"
         exit
     }
