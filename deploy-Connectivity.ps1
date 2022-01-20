@@ -2,6 +2,11 @@
 
 $globals = Get-Content -Path .\globals.json | ConvertFrom-Json
 
+if ($globals.connectivitySubscriptionId -eq "") {
+    Write-Error "Add Management subscription Id to global variables before running"
+    exit
+}
+
 Select-AzSubscription -SubscriptionName $globals.connectivitySubscriptionId
 
 $v = (Get-Content -Path ./globals.json | ConvertFrom-Json).connectivitySettings
