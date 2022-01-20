@@ -26,7 +26,7 @@ foreach ($folder in Get-ChildItem -Path .\policies\assignments -Directory -Recur
 
         if ($chk -eq $true) {
             Write-Output "Deploying $($file.BaseName)"
-            $deploymentName = "$((Split-Path -Path $file.FullName).Split('\')[-1])-$($file.BaseName)"
+            $deploymentName = "$((Split-Path -Path $file.FullName).Split('/')[-1])-$($file.BaseName)"
             if ($deploymentName.Length -ge 64) {
                 Write-Output "Trimming the deployment name - $deploymentName"
                 $deploymentName = $deploymentName -replace ".{25}$"
