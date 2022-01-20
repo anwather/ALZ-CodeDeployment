@@ -4,7 +4,7 @@ Get-AzSubscription | Where-Object state -eq "Enabled" | Foreach-Object {
     foreach ($policy in $nonCompliantPolicies) {
 
         $remediationName = "rem." + $policy.PolicyDefinitionName
-        if ($null -ne $policy.PolicyDefinitionReferenceId) {
+        if ($policy.PolicyDefinitionReferenceId -ne "") {
             Start-AzPolicyRemediation -Name $remediationName -PolicyAssignmentId $policy.PolicyAssignmentId -PolicyDefinitionReferenceId $policy.PolicyDefinitionReferenceId -AsJob
         }
     }
