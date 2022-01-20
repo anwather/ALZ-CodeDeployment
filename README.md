@@ -24,7 +24,7 @@ The following objects can be deployed:
     - defaultLocation
     - topLevelManagementGroupPrefix
 4. Add required values to the *\templates\mgStructure.json* file. Fill in the tenant Id and top level management group details where indicated.
-5. The management group structure is the same as deployed via the portal experiance, you can add management groups or add subscriptions to the management groups by entering the subscription Id in the ```subscriptions``` key. You can update any of the other names and Id's as appropriate.
+5. The management group structure is the same as deployed via the portal experiance, you can add management groups or add subscriptions to the management groups by entering the subscription Id in the ```subscriptions``` key.
 
 e.g.
 ```
@@ -36,8 +36,8 @@ e.g.
     ]
 }
 ```
-6. Run the *utilities\policies.ps1* file to download the existing policy definitions, set definitions and assignment from the [Enterprise-Scale](https://github.com/Azure/Enterprise-Scale) repository. This utility can be run periodically to check for policy changes published upstream. Files are downloaded into the appropriate folders for review.
-7. Update the folder structure in the *policies\assignments* folder to match the management group structure. The scripts use this folder structure to correlate the Ids for the management groups so you will have to rename the folders to match this structure. Policy assignments provided in the portal deployment are already created so review their values before deploying. Some of the definitions will required updating before deploying to add values such as a Log Analytics workspace resource Id. 
+6. Run the *utilities\policies.ps1* file to download the existing policy definitions, set definitions and assignment from the [Enterprise-Scale](https://github.com/Azure/Enterprise-Scale) repository. This utility can be run periodically to check for policy changes published upstream.
+7. Update the folder structure in the *policies\assignments* folder to match the management group structure. The scripts use this folder structure to correlate the Ids for the management groups so you will have to rename the folders to match this structure. Policy assignments provided in the portal deployment are already created so review them before deploying. Some of the definitions will required updating before deploying to add values such as a Log Analytics workspace resource Id. 
 
 ## Secret Configuration in GitHub
 
@@ -62,6 +62,8 @@ Run the *deploy-ManagementGroups* action to deploy the mamagement group structur
 
 Run the *deploy-PolicyObjects* action to deploy the policy definitions and set definitions.
 
+NOTE: This may fail to deploy a group of the set definitions the first time around - run the pipeline again and it should succeed. This is probably a timing issue between deploying and the policy becoming available for lookup.
+
 ## Deploy Management Subscription
 
 Before deploying the management subscription ensure the following tasks have been completed.
@@ -70,10 +72,6 @@ Before deploying the management subscription ensure the following tasks have bee
 3. All values are present in *globals.json* under the ```managementSettings``` value.
 
 ## Deploy Policy Assignments
-
-Before deploying the policy assignments carefully review the values in each file and update them as appropriate for your environment.
-
-Run the *deploy-PolicyAssignments* actions to deploy the policy assignments. 
 
 ## Deploy Connectivity Subscription
 
