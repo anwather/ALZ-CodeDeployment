@@ -12,8 +12,16 @@ The following objects can be deployed:
 - Management group and subscription structure
 - Azure Policy definitions, set definitions and assignments
 - Management subscription including Log Analytics and Automation Account
-- Connectivity subscription utilising VWAN
+- Connectivity subscription utilising Azure Virtual WAN
 - Identity subscription peered to the central hub
+
+## Limitations
+
+- Virtual WAN only - no hub/spoke
+- Cannot change the default generated names on the following
+    - Virtual Wan resource group
+    - Virtual Wan name
+    - Virtual Wan hub name 
 
 ## Initial Setup
 
