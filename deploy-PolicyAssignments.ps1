@@ -31,12 +31,22 @@ foreach ($folder in Get-ChildItem -Path .\policies\assignments -Directory -Recur
                 Write-Output "Trimming the deployment name - $deploymentName"
                 $deploymentName = $deploymentName -replace ".{25}$"
             }
-            New-AzManagementGroupDeployment -ManagementGroupId $folder.BaseName `
-                -Name $deploymentName `
-                -TemplateFile ($assignmentDefinitions | Where-Object Name -match $file.Name).FullName `
-                -TemplateParameterFile $file.FullName `
-                -Location $globals.defaultLocation `
-                -Verbose
+            if ($folder.Name -match "^(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}$") {
+                Select-AzSubscription -Subscription $folder.Name
+                New-AzSubscriptionDeployment -Name $deploymentName `
+                    -Location $globals.defaultLocation `
+                    -TemplateFile ($assignmentDefinitions | Where-Object Name -match $file.Name).FullName `
+                    -TemplateParameterFile $file.FullName `
+                    -Verbose
+            }
+            else {
+                New-AzManagementGroupDeployment -ManagementGroupId $folder.BaseName `
+                    -Name $deploymentName `
+                    -TemplateFile ($assignmentDefinitions | Where-Object Name -match $file.Name).FullName `
+                    -TemplateParameterFile $file.FullName `
+                    -Location $globals.defaultLocation `
+                    -Verbose
+            }
         }
         else {
             Write-Error "Could not deploy $($file.BaseName)"
