@@ -15,8 +15,14 @@ The following objects can be deployed:
 - Connectivity subscription utilising Azure Virtual WAN
 - Identity subscription peered to the central hub
 
-## Limitations
+## Added Features
+- Provides a code first deployment for the Azure Landing Zones
+- Simple single configuration file for most settings
+- Uses the upstream project as a base to avoid duplication
+- Policy as Code deployment
+- RBAC as Code deployment (in development)
 
+## Limitations
 - Virtual WAN only - no hub/spoke
 - Cannot change the default generated names on the following
     - Virtual Wan resource group
@@ -24,6 +30,7 @@ The following objects can be deployed:
     - Virtual Wan hub name
 - Does not deploy DDOS - it's expensive
 - Microsoft Defender for Containers is not included in the base templates so must be deployed manually (will eventually be fixed by the upstream) 
+- Does not manage state i.e. if you remove a policy it doesn't clean it up
 
 ## Initial Setup
 
@@ -94,7 +101,7 @@ Run the *deploy-PolicyAssignments* action to deploy the policy assignments.
 Before deploying the connectivity subscription ensure the following tasks have been completed.
 1. The connectivity subscription Id has been placed in the *templates\mgStructure.json* file and has been deployed
 2. The connectivity subscription Id has been added to the value ```connectivitySubscriptionId``` in *globals.json*
-3. All values are present in *globals.json* under the ```connectivitySettings``` value.
+3. All values are present in *globals.json* under the ``connectivitySettings``` value.
 
 Run the *deploy-ConnectivitySubscription* action to deploy the connectivity subscription resources.
 
@@ -103,6 +110,6 @@ Run the *deploy-ConnectivitySubscription* action to deploy the connectivity subs
 Before deploying the identity subscription ensure the following tasks have been completed.
 1. The identity subscription Id has been placed in the *templates\mgStructure.json* file and has been deployed
 2. The identity subscription Id has been added to the value ```identitySubscriptionId``` in *globals.json*
-3. All values are present in *globals.json* under the ```identitySettings``` value.
+3. All values are present in *globals.json* under the ``identitySettings``` value.
 
 Run the *deploy-IdentitySubscription* action to deploy the identity subscription resources.
