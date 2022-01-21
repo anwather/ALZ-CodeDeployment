@@ -21,7 +21,9 @@ The following objects can be deployed:
 - Cannot change the default generated names on the following
     - Virtual Wan resource group
     - Virtual Wan name
-    - Virtual Wan hub name 
+    - Virtual Wan hub name
+- Does not deploy DDOS - it's expensive
+- Microsoft Defender for Containers is not included in the base templates so must be deployed manually (will eventually be fixed by the upstream) 
 
 ## Initial Setup
 
