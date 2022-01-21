@@ -94,7 +94,7 @@ Run the *deploy-PolicyAssignments* action to deploy the policy assignments.
 Before deploying the connectivity subscription ensure the following tasks have been completed.
 1. The connectivity subscription Id has been placed in the *templates\mgStructure.json* file and has been deployed
 2. The connectivity subscription Id has been added to the value ```connectivitySubscriptionId``` in *globals.json*
-3. All values are present in *globals.json* under the ``connectivitySettings``` value.
+3. All values are present in *globals.json* under the ```connectivitySettings``` value.
 
 Run the *deploy-ConnectivitySubscription* action to deploy the connectivity subscription resources.
 
@@ -103,6 +103,6 @@ Run the *deploy-ConnectivitySubscription* action to deploy the connectivity subs
 Before deploying the identity subscription ensure the following tasks have been completed.
 1. The identity subscription Id has been placed in the *templates\mgStructure.json* file and has been deployed
 2. The identity subscription Id has been added to the value ```identitySubscriptionId``` in *globals.json*
-3. All values are present in *globals.json* under the ``identitySettings``` value.
+3. All values are present in *globals.json* under the ```identitySettings``` value.
 
 Run the *deploy-IdentitySubscription* action to deploy the identity subscription resources.
