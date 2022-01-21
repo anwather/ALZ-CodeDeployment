@@ -12,8 +12,18 @@ The following objects can be deployed:
 - Management group and subscription structure
 - Azure Policy definitions, set definitions and assignments
 - Management subscription including Log Analytics and Automation Account
-- Connectivity subscription utilising VWAN
+- Connectivity subscription utilising Azure Virtual WAN
 - Identity subscription peered to the central hub
+
+## Limitations
+
+- Virtual WAN only - no hub/spoke
+- Cannot change the default generated names on the following
+    - Virtual Wan resource group
+    - Virtual Wan name
+    - Virtual Wan hub name
+- Does not deploy DDOS - it's expensive
+- Microsoft Defender for Containers is not included in the base templates so must be deployed manually (will eventually be fixed by the upstream) 
 
 ## Initial Setup
 
@@ -41,7 +51,7 @@ e.g.
 
 ## Secret Configuration in GitHub
 
-Create a new service principal and assign it as an owner at the Root Management Group.
+Create a new service principal and assign it as an owner at the Root Management Group. [Instructions](https://github.com/Azure/Enterprise-Scale/blob/main/docs/EnterpriseScale-Setup-azure.md#2-grant-access-to-user-andor-service-principal-at-root-scope--to-deploy-enterprise-scale-reference-implementation)
 
 Add the service principal values to secrets in the GitHub repository as below. These values are used to connect to Azure and deploy resources.
 
@@ -62,6 +72,8 @@ Run the *deploy-ManagementGroups* action to deploy the mamagement group structur
 
 Run the *deploy-PolicyObjects* action to deploy the policy definitions and set definitions.
 
+NOTE: This may fail to deploy a group of the set definitions the first time around - run the pipeline again and it should succeed. This is probably a timing issue between deploying and the policy becoming available for lookup.
+
 ## Deploy Management Subscription
 
 Before deploying the management subscription ensure the following tasks have been completed.
@@ -69,8 +81,28 @@ Before deploying the management subscription ensure the following tasks have bee
 2. The management subscription Id has been added to the value ```managementSubscriptionId``` in *globals.json*
 3. All values are present in *globals.json* under the ```managementSettings``` value.
 
+Run the *deploy-ManagementSubscription* action to deploy the management subscription resources.
+
 ## Deploy Policy Assignments
+
+Before deploying the policy assignments carefully review the values in each file and update them as appropriate for your environment.
+
+Run the *deploy-PolicyAssignments* action to deploy the policy assignments.
 
 ## Deploy Connectivity Subscription
 
+Before deploying the connectivity subscription ensure the following tasks have been completed.
+1. The connectivity subscription Id has been placed in the *templates\mgStructure.json* file and has been deployed
+2. The connectivity subscription Id has been added to the value ```connectivitySubscriptionId``` in *globals.json*
+3. All values are present in *globals.json* under the ``connectivitySettings``` value.
+
+Run the *deploy-ConnectivitySubscription* action to deploy the connectivity subscription resources.
+
 ## Deploy Identity Subscription
+
+Before deploying the identity subscription ensure the following tasks have been completed.
+1. The identity subscription Id has been placed in the *templates\mgStructure.json* file and has been deployed
+2. The identity subscription Id has been added to the value ```identitySubscriptionId``` in *globals.json*
+3. All values are present in *globals.json* under the ``identitySettings``` value.
+
+Run the *deploy-IdentitySubscription* action to deploy the identity subscription resources.

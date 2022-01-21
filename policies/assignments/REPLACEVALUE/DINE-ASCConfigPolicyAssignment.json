@@ -12,7 +12,7 @@
             "value": "" // Requires value
         },
         "emailContactAsc": {
-            "value": "anwather@microsoft.com"
+            "value": ""
         },
         "enableAscForServers": {
             "value": "DeployIfNotExists"
