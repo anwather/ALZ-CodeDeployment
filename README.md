@@ -15,8 +15,14 @@ The following objects can be deployed:
 - Connectivity subscription utilising Azure Virtual WAN
 - Identity subscription peered to the central hub
 
-## Limitations
+## Added Features
+- Provides a code first deployment for the Azure Landing Zones
+- Simple single configuration file for most settings
+- Uses the upstream project as a base to avoid duplication
+- Policy as Code deployment
+- RBAC as Code deployment (in development)
 
+## Limitations
 - Virtual WAN only - no hub/spoke
 - Cannot change the default generated names on the following
     - Virtual Wan resource group
@@ -24,6 +30,7 @@ The following objects can be deployed:
     - Virtual Wan hub name
 - Does not deploy DDOS - it's expensive
 - Microsoft Defender for Containers is not included in the base templates so must be deployed manually (will eventually be fixed by the upstream) 
+- Does not manage state i.e. if you remove a policy it doesn't clean it up
 
 ## Initial Setup
 
