@@ -1,6 +1,6 @@
 # Custom Policy Deployment
 
-The basic steps deploy the policies included in the default CAF Enterprise Scale repository. 
+The basic steps in Readme.md deploy the policies included in the default CAF Enterprise Scale repository. 
 
 This document explains how to deploy custom policy definitions, initiatives and assignments. 
 
@@ -127,14 +127,13 @@ For the example above this was the policy extracted and copied to *.\policies\in
 
 4. Create an assignment definition file.
 - The example above is going to be deployed at the subscription level
-- The policies make use of a managed identity so will need to do RBAC as well
+- The policies make use of a managed identity so there needs to be RBAC defined in the assignment as well.
 
 Again copy or create manually the assignment for the policy initiative. Place the file in the *policies\assignmentDefinitions* folder.
 
-Be careful to ensure the parameters flow correctly and there are role assignment resources for each role in the initative. 
+Be careful to ensure the parameters flow correctly and there are role assignment resources for each role in the initiative. 
 
-For the example above this is the assignment definition created
-
+For the example above this is the assignment definition created.
 ```
 {
     "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
@@ -233,7 +232,8 @@ For the example above this is the assignment definition created
 ```
 5. Create the assignment definition parameter file.
 - This file can easily be done by using the VS Code ARM Tools extension and creating a parameter file from the assignment definition file.
-- To deploy the a subscription you should create a folder in the assignments folder under the management group where the subscription is and give it the same name as the subscription id.
+- The parameter file should have the same name as the assignment file.
+- To deploy to a subscription you should create a folder in the assignments folder under the management group where the subscription is and give it the same name as the subscription id. Note - the deployment uses **mrt** as the top level management group as an example.
 
 e.g.
 ```
@@ -285,7 +285,7 @@ For the parameter file which fits the example see below:
 
 ### Example 2 - Deploy single policy - no initiative
 
-Background: Contoso requires that resource are deployed only into the australiaeast and australiasoutheast regions for all landing zones.
+Background: Contoso requires that resources are deployed only into the australiaeast and australiasoutheast regions for all landing zones.
 
 Steps:-
 
