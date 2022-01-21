@@ -54,6 +54,5 @@ New-AzResourceGroupDeployment -Name "$($globals.topLevelManagementGroupId)-priva
     -ResourceGroupName $v.dnsResourceGroup `
     -TemplateFile .\bicep\privateDnsZone.bicep `
     -privateDnsZoneNames $zoneupdate `
-    -location "global" `
     -Verbose
 
