@@ -20,7 +20,7 @@ The following objects can be deployed:
 - Simple single configuration file for most settings
 - Uses the upstream project as a base to avoid duplication
 - Policy as Code deployment
-- RBAC as Code deployment (in development)
+- RBAC as Code deployment
 
 ## Limitations
 - Virtual WAN only - no hub/spoke
