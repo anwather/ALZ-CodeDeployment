@@ -1,4 +1,4 @@
-# CAF Code Deployment
+# ALZ Code Deployment
 
 This project helps to deploy and manage the Azure Landing Zones platform deployment using Infrastrcture as Code.
 
