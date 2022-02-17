@@ -29,7 +29,6 @@ The following objects can be deployed:
     - Virtual Wan name
     - Virtual Wan hub name
 - Does not deploy DDOS - it's expensive
-- Microsoft Defender for Containers is not included in the base templates so must be deployed manually (will eventually be fixed by the upstream) 
 - Does not manage state i.e. if you remove a policy it doesn't clean it up
 
 ## Initial Setup
