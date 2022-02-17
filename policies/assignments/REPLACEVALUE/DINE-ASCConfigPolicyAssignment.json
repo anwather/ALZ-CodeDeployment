@@ -3,49 +3,46 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "topLevelManagementGroupPrefix": {
-            "value": "contoso"
+            "value": ""
         },
         "enforcementMode": {
             "value": "Default"
         },
         "logAnalyticsResourceId": {
-            "value": "" // Requires value
+            "value": ""
         },
         "emailContactAsc": {
             "value": ""
         },
         "enableAscForServers": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         },
         "enableAscForSql": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         },
         "enableAscForAppServices": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         },
         "enableAscForStorage": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         },
-        "enableAscForRegistries": {
-            "value": "DeployIfNotExists"
+        "enableAscForContainers": {
+            "value": "Disabled"
         },
         "enableAscForKeyVault": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         },
         "enableAscForSqlOnVm": {
-            "value": "DeployIfNotExists"
-        },
-        "enableAscForKubernetes": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         },
         "enableAscForArm": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         },
         "enableAscForDns": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         },
         "enableAscForOssDb": {
-            "value": "DeployIfNotExists"
+            "value": "Disabled"
         }
     }
 }
