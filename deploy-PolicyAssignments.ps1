@@ -14,7 +14,7 @@ $requiredValues | ForEach-Object {
 $assignmentDefinitions = Get-ChildItem .\policies\assignmentDefinitions -File
 
 foreach ($folder in Get-ChildItem -Path .\policies\assignments -Directory -Recurse) {
-    foreach ($file in Get-ChildItem $folder -File) {
+    foreach ($file in Get-ChildItem $folder -File | Where-Object Name -NotMatch "^EX_") {
         $ct = (Get-Content $file.FullName -Raw | ConvertFrom-Json).Parameters | ConvertPSObjectToHashtable
         $chk = $true
         $ct.GetEnumerator() | Foreach-Object {
