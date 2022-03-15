@@ -7,6 +7,6 @@ resource rbac 'Microsoft.Authorization/roleAssignments@2019-04-01-preview' = [fo
   properties: {
     principalType: item.principalType
     principalId: item.principalId
-    roleDefinitionId: resourceId('Microsoft.Authorization/roleDefnitions', item.roleDefinitionId)
+    roleDefinitionId: resourceId('Microsoft.Authorization/roleDefinitions', item.roleDefinitionId)
   }
 }]
