@@ -20,7 +20,8 @@ Roles are then deployed using the *deploy-RBAC* action.
 
 |Field Name| Value | Notes
 |---|---|---|
-|principalType| group/user | Required
+|principalType| group/user/serviceprincipal | Required
+|servicePrincipalId| Object Id of Service Principal (Enterprise Application) | Not required if groupId or user Id is supplied
 |groupName | Name of Azure AD Group | Not required if groupId is supplied
 | groupId | Id of Azure AD Group | Not required if groupName is supplied
 |userName | Name of Azure AD User | Not required if userId is supplied
