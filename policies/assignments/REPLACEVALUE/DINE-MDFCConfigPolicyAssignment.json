@@ -15,34 +15,34 @@
             "value": ""
         },
         "enableAscForServers": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForSql": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForAppServices": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForStorage": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForContainers": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForKeyVault": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForSqlOnVm": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForArm": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForDns": {
-            "value": "Disabled"
+            "value": "Enabled"
         },
         "enableAscForOssDb": {
-            "value": "Disabled"
+            "value": "Enabled"
         }
     }
 }
