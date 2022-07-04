@@ -41,14 +41,14 @@ foreach ($folder in Get-ChildItem -Path .\policies\assignments -Directory -Recur
                 Select-AzSubscription -Subscription $folder.Name
                 New-AzSubscriptionDeployment -Name $deploymentName `
                     -Location $globals.defaultLocation `
-                    -TemplateFile ($assignmentDefinitions | Where-Object BaseName -match $file.BaseName).FullName `
+                    -TemplateFile ($assignmentDefinitions | Where-Object Name -match $file.Name).FullName `
                     -TemplateParameterFile $file.FullName `
                     -Verbose
             }
             else {
                 New-AzManagementGroupDeployment -ManagementGroupId $folder.BaseName `
                     -Name $deploymentName `
-                    -TemplateFile ($assignmentDefinitions | Where-Object BaseName -match $file.BaseName) `
+                    -TemplateFile ($assignmentDefinitions | Where-Object Name -match $file.Name).FullName `
                     -TemplateParameterFile $file.FullName `
                     -Location $globals.defaultLocation `
                     -Verbose
