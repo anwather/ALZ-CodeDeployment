@@ -26,7 +26,13 @@ foreach ($folder in Get-ChildItem -Path .\policies\assignments -Directory -Recur
 
         if ($chk -eq $true) {
             Write-Output "Deploying $($file.BaseName)"
-            $deploymentName = "$((Split-Path -Path $file.FullName).Split('/')[-1])-$($file.BaseName)"
+            if ($IsWindows) {
+                $deploymentName = "$((Split-Path -Path $file.FullName).Split('\')[-1])-$($file.BaseName)"
+            }
+            else {
+                $deploymentName = "$((Split-Path -Path $file.FullName).Split('/')[-1])-$($file.BaseName)"
+            }
+            
             if ($deploymentName.Length -ge 64) {
                 Write-Output "Trimming the deployment name - $deploymentName"
                 $deploymentName = $deploymentName -replace ".{25}$"
@@ -35,14 +41,14 @@ foreach ($folder in Get-ChildItem -Path .\policies\assignments -Directory -Recur
                 Select-AzSubscription -Subscription $folder.Name
                 New-AzSubscriptionDeployment -Name $deploymentName `
                     -Location $globals.defaultLocation `
-                    -TemplateFile ($assignmentDefinitions | Where-Object Name -match $file.Name).FullName `
+                    -TemplateFile ($assignmentDefinitions | Where-Object BaseName -match $file.BaseName).FullName `
                     -TemplateParameterFile $file.FullName `
                     -Verbose
             }
             else {
                 New-AzManagementGroupDeployment -ManagementGroupId $folder.BaseName `
                     -Name $deploymentName `
-                    -TemplateFile ($assignmentDefinitions | Where-Object Name -match $file.Name).FullName `
+                    -TemplateFile ($assignmentDefinitions | Where-Object BaseName -match $file.BaseName) `
                     -TemplateParameterFile $file.FullName `
                     -Location $globals.defaultLocation `
                     -Verbose
